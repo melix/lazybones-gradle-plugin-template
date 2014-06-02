@@ -7,10 +7,10 @@ bintray {
     key = bintrayKey
     publications = ['mavenJava']
     pkg {
-        repo = 'gradle-plugins'
-        name = 'antlr4-gradle-plugin'
-        desc = 'An Antlr4 plugin for Gradle'
+        repo = '${bintrayRepo}'
+        name = 'gradle-${pluginName}-plugin'
+        desc = '${pluginDescription}'
         licenses = ['Apache-2.0']
-        labels = ['antlr4', 'gradle']
+        labels = []
     }
 }

@@ -4,8 +4,11 @@ def params = [:]
 params['groupId'] = ask('What is the groupId for your plugin?\n')
 params['pluginName'] = ask('What is the short name for your plugin?\n').toLowerCase()
 params['version'] = ask("What is the project's initial version?\n", '0.1', 'version')
+params['pluginDescription'] = ask('Enter a short (one line) description of the plugin\n')
+params['pluginAuthor'] = ask('What is your name?\n')
+params['bintrayRepo'] = ask('What is the name of the Bintray repository you will be deploying to?\n','gradle-plugins', 'bintrayRepo')
 
-['settings.gradle','build.gradle'].each {
+['settings.gradle','build.gradle', 'gradle/*', 'LICENSE.txt'].each {
     processTemplates(it, params)
 }
 
