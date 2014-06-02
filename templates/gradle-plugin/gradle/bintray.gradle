@@ -1,0 +1,16 @@
+// Handles publication of distributions to Bintray
+
+apply plugin: 'bintray'
+
+bintray {
+    user = bintrayUsername
+    key = bintrayKey
+    publications = ['mavenJava']
+    pkg {
+        repo = 'gradle-plugins'
+        name = 'antlr4-gradle-plugin'
+        desc = 'An Antlr4 plugin for Gradle'
+        licenses = ['Apache-2.0']
+        labels = ['antlr4', 'gradle']
+    }
+}
